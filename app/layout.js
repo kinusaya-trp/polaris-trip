@@ -1,3 +1,5 @@
+import './globals.css';
+
 export const metadata = {
   title: 'Polaris Trip',
   description: 'さやかの旅のしおりアプリ',
