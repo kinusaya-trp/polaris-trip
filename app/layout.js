@@ -11,9 +11,13 @@ export default function RootLayout({ children }) {
       <body className="bg-gray-100 min-h-screen">
         
         {/* ヘッダー */}
-        <header className="bg-white shadow p-4 text-center text-lg font-semibold">
-          Polaris Trip
-        </header>
+       <header className="bg-white shadow p-4 text-center text-lg font-semibold">
+  Polaris Trip
+  <p className="text-sm text-gray-500 mt-1">
+    好きなものを丁寧に集めて、旅をもっと思いのままに、気の向くままに
+  </p>
+</header>
+
 
         {/* メインコンテンツ */}
         <main className="p-6 max-w-3xl mx-auto">{children}</main>
