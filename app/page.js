@@ -4,12 +4,10 @@ export default function Home() {
       {/* ヘッダー */}
       <header className="bg-white shadow p-4 text-center font-semibold text-lg">
         Polaris Trip
+        <p className="text-sm text-gray-600 mt-1">
+          好きなものを丁寧に集めて、旅をもっと思いのままに、気の向くままに
+        </p>
       </header>
-
-      {/* サブタイトル */}
-      <div className="text-center mt-6 text-gray-700">
-        <p>好きなものを丁寧に集めて、旅をもっと思いのままに、気の向くままに</p>
-      </div>
 
       {/* 本棚エリア */}
       <main className="max-w-2xl mx-auto mt-10 p-4">
@@ -18,7 +16,6 @@ export default function Home() {
 
         {/* しおりカード（仮） */}
         <div className="grid grid-cols-1 gap-4">
-
           {/* しおり 1（仮表示） */}
           <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition">
             <p className="text-lg font-semibold">マイしおり</p>
@@ -32,7 +29,6 @@ export default function Home() {
               開く
             </a>
           </div>
-
         </div>
 
         {/* 新しいしおりを作る */}
