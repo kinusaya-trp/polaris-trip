@@ -83,6 +83,7 @@ export default function Home() {
                 <p className="text-xs text-gray-500">{trip.date}</p>
                 <p className="text-xs text-gray-500">{trip.location}</p>
               </div>
+
             </div>
           </article>
         ))}
