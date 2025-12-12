@@ -42,7 +42,8 @@ export default function Home() {
             key={trip.id}
             className="bg-white rounded-md overflow-hidden shadow flex"
           >
-            <div className="w-1/2">
+            {/* 左：画像 */}
+            <div className="w-1/2 overflow-hidden">
               <img
                 src={trip.image}
                 alt={trip.title}
@@ -50,6 +51,7 @@ export default function Home() {
               />
             </div>
 
+            {/* 右：情報 */}
             <div className="w-1/2 p-6 flex flex-col justify-center">
               <div className="flex items-center mb-3">
                 <span
@@ -61,7 +63,6 @@ export default function Home() {
               </div>
 
               <h2 className="text-lg mb-2 leading-snug">{trip.title}</h2>
-
               <p className="text-xs text-gray-500">{trip.date}</p>
               <p className="text-xs text-gray-500">{trip.location}</p>
             </div>
@@ -71,4 +72,3 @@ export default function Home() {
     </main>
   );
 }
-
