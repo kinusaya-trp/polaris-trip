@@ -30,15 +30,28 @@ export default function Home() {
       {/* Bookshelf */}
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {tripsData.map((trip) => (
-          <article key={trip.id}className="book-transform">
-            <div className="book-transform bg-white rounded-md overflow-hidden shadow">
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={trip.image}
-                  alt={trip.title}
-                  className="w-full h-full object-cover photo-filter"
-                />
-              </div>
+         <article key={trip.id} className="book-transform">
+  <div className="book-transform bg-white rounded-md overflow-hidden shadow flex">
+
+    {/* 左ページ */}
+    <div className="w-1/2 h-48 overflow-hidden">
+      <img
+        src={trip.image}
+        alt={trip.title}
+        className="w-full h-full object-cover photo-filter"
+      />
+    </div>
+
+    {/* 右ページ */}
+    <div className="w-1/2 p-6 flex flex-col justify-center">
+      {/* ステータス */}
+      {/* タイトル */}
+      {/* 日付・場所 */}
+    </div>
+
+  </div>
+</article>
+
 
               <div className="p-6">
                 <div className="flex items-center mb-3">
