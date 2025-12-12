@@ -37,38 +37,38 @@ export default function Home() {
       </header>
 
       <section className="grid md:grid-cols-2 gap-12">
-        {tripsData.map((trip) => (
-          <article
-            key={trip.id}
-            className="bg-white rounded-md overflow-hidden shadow flex"
-          >
-            {/* 左：画像 */}
-            <div className="w-1/2 overflow-hidden">
-              <img
-                src={trip.image}
-                alt={trip.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+{tripsData.map((trip) => (
+  <article key={trip.id} className="book-transform">
+    <div className="bg-white rounded-md overflow-hidden shadow flex">
 
-            {/* 右：情報 */}
-            <div className="w-1/2 p-6 flex flex-col justify-center">
-              <div className="flex items-center mb-3">
-                <span
-                  className={`w-2 h-2 rounded-full mr-2 ${statusColor[trip.status]}`}
-                />
-                <span className="text-xs tracking-widest text-gray-400 uppercase">
-                  {trip.status}
-                </span>
-              </div>
+      {/* 左ページ */}
+      <div className="w-1/2 overflow-hidden">
+        <img
+          src={trip.image}
+          alt={trip.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-              <h2 className="text-lg mb-2 leading-snug">{trip.title}</h2>
-              <p className="text-xs text-gray-500">{trip.date}</p>
-              <p className="text-xs text-gray-500">{trip.location}</p>
-            </div>
-          </article>
-        ))}
-      </section>
-    </main>
-  );
-}
+      {/* 右ページ */}
+      <div className="w-1/2 p-6 flex flex-col justify-center">
+        <div className="flex items-center mb-3">
+          <span
+            className={`w-1.5 h-1.5 rounded-full mr-2 ${statusColor[trip.status]}`}
+          />
+          <span className="text-xs tracking-widest text-gray-400 uppercase">
+            {trip.status}
+          </span>
+        </div>
+
+        <h2 className="text-lg leading-snug mb-2 line-clamp-2">
+          {trip.title}
+        </h2>
+
+        <p className="text-xs text-gray-500">{trip.date}</p>
+        <p className="text-xs text-gray-500">{trip.location}</p>
+      </div>
+
+    </div>
+  </article>
+))}
