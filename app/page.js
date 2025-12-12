@@ -1,3 +1,5 @@
+// app/page.js
+
 export default function Home() {
   const tripsData = [
     {
@@ -21,12 +23,13 @@ export default function Home() {
   ];
 
   const statusColor = {
-    planning: "bg-[#8DACC0]",
-    done: "bg-[#B4A7B8]",
+    planning: "bg-blue-300",
+    done: "bg-purple-300",
   };
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-12">
+      {/* Header */}
       <header className="text-center mb-16">
         <h1 className="text-4xl tracking-widest mb-4">Polaris Trip</h1>
         <p className="text-sm text-gray-500">
@@ -34,35 +37,37 @@ export default function Home() {
         </p>
       </header>
 
+      {/* Cards */}
       <section className="grid md:grid-cols-2 gap-12">
         {tripsData.map((trip) => (
-          <article key={trip.id} className="book-transform">
-            <div className="bg-white rounded-md overflow-hidden shadow flex">
-              <div className="w-1/2 overflow-hidden">
-                <img
-                  src={trip.image}
-                  alt={trip.title}
-                  className="w-full h-full object-cover"
+          <article
+            key={trip.id}
+            className="bg-white rounded-md overflow-hidden shadow flex"
+          >
+            {/* 左：画像 */}
+            <div className="w-1/2">
+              <img
+                src={trip.image}
+                alt={trip.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* 右：情報 */}
+            <div className="w-1/2 p-6 flex flex-col justify-center">
+              <div className="flex items-center mb-3">
+                <span
+                  className={`w-2 h-2 rounded-full mr-2 ${statusColor[trip.status]}`}
                 />
+                <span className="text-xs tracking-widest text-gray-400 uppercase">
+                  {trip.status}
+                </span>
               </div>
 
-              <div className="w-1/2 p-6 flex flex-col justify-center">
-                <div className="flex items-center mb-3">
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full mr-2 ${statusColor[trip.status]}`}
-                  />
-                  <span className="text-xs tracking-widest text-gray-400 uppercase">
-                    {trip.status}
-                  </span>
-                </div>
+              <h2 className="text-lg mb-2 leading-snug">{trip.title}</h2>
 
-                <h2 className="text-lg leading-snug mb-2">
-                  {trip.title}
-                </h2>
-
-                <p className="text-xs text-gray-500">{trip.date}</p>
-                <p className="text-xs text-gray-500">{trip.location}</p>
-              </div>
+              <p className="text-xs text-gray-500">{trip.date}</p>
+              <p className="text-xs text-gray-500">{trip.location}</p>
             </div>
           </article>
         ))}
