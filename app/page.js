@@ -49,45 +49,38 @@ export default function Home() {
 
       {/* Bookshelf */}
       <section className="grid md:grid-cols-2 gap-12">
-        {tripsData.map((trip) => (
-          <article key={trip.id} className="book-transform">
-            <div className="bg-white rounded-md overflow-hidden shadow flex">
+{tripsData.map((trip) => (
+  <article key={trip.id} className="book-transform">
+    <div className="bg-white rounded-md overflow-hidden shadow flex">
 
-              {/* 左ページ：写真 */}
-              <div className="w-1/2 overflow-hidden">
-                <img
-                  src={trip.image}
-                  alt={trip.title}
-                  className="w-full h-full object-cover photo-filter"
-                />
-              </div>
+      {/* 左ページ */}
+      <div className="w-1/2 overflow-hidden">
+        <img
+          src={trip.image}
+          alt={trip.title}
+          className="w-full h-full object-cover photo-filter"
+        />
+      </div>
 
-              {/* 右ページ：情報 */}
-              <div className="w-1/2 p-6 flex flex-col justify-center">
-                {/* ステータス */}
-                <div className="flex items-center mb-3">
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full mr-2 ${statusColor[trip.status]}`}
-                  />
-                  <span className="text-xs tracking-widest text-gray-400 uppercase">
-                    {trip.status}
-                  </span>
-                </div>
+      {/* 右ページ */}
+      <div className="w-1/2 p-6 flex flex-col justify-center">
+        <div className="flex items-center mb-3">
+          <span
+            className={`w-1.5 h-1.5 rounded-full mr-2 ${statusColor[trip.status]}`}
+          />
+          <span className="text-xs tracking-widest text-gray-400 uppercase">
+            {trip.status}
+          </span>
+        </div>
 
-                {/* タイトル */}
-                <h2 className="text-lg leading-snug mb-2 line-clamp-2">
-                  {trip.title}
-                </h2>
+        <h2 className="text-lg leading-snug mb-2 line-clamp-2">
+          {trip.title}
+        </h2>
 
-                {/* 日付・場所 */}
-                <p className="text-xs text-gray-500">{trip.date}</p>
-                <p className="text-xs text-gray-500">{trip.location}</p>
-              </div>
+        <p className="text-xs text-gray-500">{trip.date}</p>
+        <p className="text-xs text-gray-500">{trip.location}</p>
+      </div>
 
-            </div>
-          </article>
-        ))}
-      </section>
-    </main>
-  );
-}
+    </div>
+  </article>
+))}
