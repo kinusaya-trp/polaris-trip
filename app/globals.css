@@ -38,3 +38,12 @@ body {
   filter: sepia(0.05) saturate(0.95);
   transform: scale(1.02);
 }
+/* Book hover effect */
+.book-transform {
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.book-transform:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
