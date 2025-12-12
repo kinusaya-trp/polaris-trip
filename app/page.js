@@ -28,13 +28,13 @@ export default function Home() {
       </header>
 
       {/* Bookshelf */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <section className="grid md:grid-cols-2 gap-12">
         {tripsData.map((trip) => (
          <article key={trip.id} className="book-transform">
   <div className="book-transform bg-white rounded-md overflow-hidden shadow flex">
 
     {/* 左ページ */}
-    <div className="w-1/2 h-48 overflow-hidden">
+    <div className="w-1/2 overflow-hidden">
       <img
         src={trip.image}
         alt={trip.title}
