@@ -30,7 +30,7 @@ export default function Home() {
       {/* Bookshelf */}
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {tripsData.map((trip) => (
-          <article key={trip.id} className="group">
+          <article key={trip.id}className="book-transform">
             <div className="book-transform bg-white rounded-md overflow-hidden shadow">
               <div className="h-48 overflow-hidden">
                 <img
