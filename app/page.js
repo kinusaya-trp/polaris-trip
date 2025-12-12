@@ -41,7 +41,7 @@ export default function Home() {
           return (
             <article
               key={trip.id}
-              className="bg-white rounded-md overflow-hidden shadow flex"
+              className="bg-white rounded-md overflow-hidden flex"
             >
               {/* 左：画像 */}
               <div className="w-1/2">
